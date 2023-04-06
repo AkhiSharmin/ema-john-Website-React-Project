@@ -4,7 +4,8 @@ import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 import { Link } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 const Shop = () => {
@@ -76,7 +77,10 @@ const Shop = () => {
                 handleClearCart={handleClearCart}
                 >
                   <Link className='proceed-link' to="/orders">
-                    <button className='btn-proceed'>Review Orders</button>
+                    <button className='btn-proceed'>
+                        Review Orders
+                        <FontAwesomeIcon icon={faArrowLeft} />
+                        </button>
                   </Link> 
                 </Cart>
                 

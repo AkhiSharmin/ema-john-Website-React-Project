@@ -4,6 +4,8 @@ import Cart from '../Cart/Cart';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTasks } from '@fortawesome/free-solid-svg-icons'
 
 const Orders = () => {
 
@@ -38,7 +40,10 @@ const Orders = () => {
                 handleClearCart={handleClearCart}
                 >
                  <Link className='proceed-link' to='/checkout'>
-                    <button className='btn-proceed'>Proceed CheckOut</button>
+                    <button className='btn-proceed btn-proceed-font'>
+                        Proceed CheckOut
+                        <FontAwesomeIcon icon={faTasks} />
+                        </button>
                  </Link>   
                 </Cart>
            </div>
