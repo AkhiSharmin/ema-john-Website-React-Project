@@ -3,8 +3,9 @@
   border: 1px solid #95a0a7;
   border-radius: 8px;
   margin-bottom: 25px;
-  padding: 8px;
+  padding: 8px 25px 8px 8px;
   display: flex;
+  align-items: center;
 }
 
 .review-item .product-title {
@@ -30,4 +31,17 @@
 
 .orange-text {
   color: #ff9900;
+}
+.btn-delete {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  background-color: rgba(235, 87, 87, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delete-icon {
+  color: #eb5757;
+  font-size: 27px;
 }
