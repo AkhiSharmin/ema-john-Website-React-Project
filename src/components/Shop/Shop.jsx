@@ -58,19 +58,18 @@ const Shop = () => {
     }
 
 
-
     return (
         <div className='shop-container'>
-
             <div className='products-container'>
                 {
-                    products.map(product => <Product 
+                    products.slice(1,10).map(product => <Product
                         key={product.id}
                         product={product}
                         handleAddToCart={handleAddToCart}
                         ></Product>)
                 }
             </div>
+            
 
             <div className="cart-container">
                 <Cart cart={cart}

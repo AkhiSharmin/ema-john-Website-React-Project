@@ -13,6 +13,8 @@ import Inventory from './components/Inventory/Inventory';
 import Login from './components/Login/Login';
 import cartProductsLoader from './loaders/cartProductsLoader';
 import CheckOut from './components/CheckOut/CheckOut';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import SingUp from './components/SingUp/SingUp';
 
 
 const router = createBrowserRouter([
@@ -40,7 +42,15 @@ const router = createBrowserRouter([
         {
           path: 'login',
           element: <Login></Login>
-        }
+        },
+        {
+          path: 'singUp',
+          element: <SingUp></SingUp>
+        },
+        {
+          path: '*',
+          element: <ErrorPage></ErrorPage>
+        },
       ]
     }
 ])
