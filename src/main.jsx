@@ -16,6 +16,7 @@ import CheckOut from './components/CheckOut/CheckOut';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import SingUp from './components/SingUp/SingUp';
 import AuthProviders from './components/providers/AuthProviders';
+import PrivateRoutes from './routes/PrivateRoutes';
 
 
 const router = createBrowserRouter([
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'checkout',
-          element: <CheckOut></CheckOut>
+          element: <PrivateRoutes><CheckOut></CheckOut> </PrivateRoutes>
         },
         {
           path: 'login',
