@@ -4,6 +4,7 @@ import app from '../../firebase/firebase.config';
 
 
 
+
 export const AuthContext = createContext(null)
 
 const auth = getAuth(app)
@@ -11,11 +12,15 @@ const auth = getAuth(app)
 const AuthProviders = ({children}) => {
     const [user, setUser] = useState(null)
 
+    const [loading, setLoading] = useState(true)
+
     const createUser = (email,password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const singIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -28,6 +33,7 @@ const AuthProviders = ({children}) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
+            setLoading(false)
         });
         //stop observing while unmounting
         return () => {
@@ -39,9 +45,11 @@ const AuthProviders = ({children}) => {
 
     const authInfo = {
         user,
+        loading,
         createUser,
         singIn,
-        logOut
+        logOut,
+        
     }
 
     return (
